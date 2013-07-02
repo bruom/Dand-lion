@@ -1,13 +1,12 @@
-L0vetann (or just poject)
-========
-
-Bem vindo! _Welcome_.
-
-pt-br is the main language _;)_
+### Projeto Lø!
 ***
-Linguagem: Java
-Configurado para Eclipse
 
-_by: Qirion_
+![D](http://www.2dsense.com/images/rolls.aspx?code=2DS.US/892621D.C&size=10)
+
+Projeto de desenvolvimento de uma framework capaz de gerar, de forma procedural, tuda a galáxia, com as estrelas, planetas, lagos, arvores, etc...
+
+> Não tenho compromisso em conclui-lo!
+
 ***
-> Um projeto. SÃ³ isso. Nada de interessante...
+
+É priobido o uso comercial deste código. Seu uso deve ser para fins acadêmicos.
