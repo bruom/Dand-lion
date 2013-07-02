@@ -9,12 +9,28 @@ public class User {
 	
 	public User(double[] loc){//Construtor
 		this.xyz=loc;//Seta a localização do usuário
+		centralizaMatriz();
 		geraBlocos();
+		
 		
 	}//--
 	
+	private void centralizaMatriz() {
+		this.blocoAtual[0]=(int) ((double)(blocoSfera/2)+0.5);
+		this.blocoAtual[1]=(int) ((double)(blocoSfera/2)+0.5);
+		this.blocoAtual[2]=(int) ((double)(blocoSfera/2)+0.5);
+	}
+
 	private void geraBlocos() {//Instancia a matriz de blocos
 		matrizDeBlocos = new MegaBloco[blocoSfera][blocoSfera][blocoSfera];
+		int x=0,y=0,z=0;
+		for(;x<matrizDeBlocos.length;x++){
+			for(;y<matrizDeBlocos[0].length;y++){
+				for(;z<matrizDeBlocos[0][0].length;z++){
+					
+				}
+			}
+		}
 		
 	}
 	
@@ -40,32 +56,39 @@ public class User {
 	}
 
 	private void sz() {//Sobe para o próximo bloco em Z
+		xyz[2]=1;//Atualiza a coordenada
 		
+		centralizaMatriz();
 		
 	}
 
 	private void sy() {//Sobe para o próximo bloco em Y
-		
+		xyz[1]=1;//Atualiza a coordenada
+		centralizaMatriz();
 		
 	}
 
 	private void sx() {//Sobe para o próximo bloco em X
-		
+		xyz[0]=1;//Atualiza a coordenada
+		centralizaMatriz();
 		
 	}
 
 	private void dz() {//Desce para o próximo bloco em Z
-		
+		xyz[2]=500;//Atualiza a coordenada
+		centralizaMatriz();
 		
 	}
 
 	private void dy() {//Desce para o próximo bloco em Z
-		
+		xyz[1]=500;//Atualiza a coordenada
+		centralizaMatriz();
 		
 	}
 
 	private void dx() {//Desce para o próximo bloco em Z
-		
+		xyz[0]=500;//Atualiza a coordenada
+		centralizaMatriz();
 		
 	}
 	

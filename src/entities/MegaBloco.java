@@ -4,6 +4,7 @@ package entities;
 public class MegaBloco {
 	
 	public long seed;
+	public long id;
 	public final int aresta = 500;//Define a aresta do Bloco
 	public long coord[] = new long[3];//Define a coordenada do bloco na galáxia
 	
@@ -11,6 +12,13 @@ public class MegaBloco {
 		
 		this.coord=paramCoord;
 		
+		gerarEstrelas();
+		
+		
+	}
+
+	private void gerarEstrelas() {
+		// TODO Auto-generated method stub
 		
 	}
 
