@@ -2,10 +2,12 @@ package entities;
 //Classe responsável por criar o universo!
 public class Universo {
 	
-	public static User usuario;
+	public Galaxia galaxia;
+	public User usuario;
 	
 	public Universo(){
-		Universo.usuario = new User(null);
+		this.galaxia = new Galaxia();
+		this.usuario = new User(null);
 		
 		//Iinstancie aqui o resto ^^
 		
@@ -14,7 +16,7 @@ public class Universo {
 	}
 	
 	public void update(){
-		Universo.usuario.update();
+		this.usuario.update();
 	}
 
 }
