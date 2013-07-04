@@ -37,7 +37,7 @@ public class Universo {
 	}
 
 	public void update(){//Update universal.
-		//Universo.usuario.update();
+		Universo.usuario.update();
 	}
 
 
