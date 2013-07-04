@@ -2,36 +2,35 @@ package entities;
 
 import java.awt.image.*;
 import java.io.*;
+
 import javax.imageio.*;
 
 public class Galaxia {
-	BufferedImage topMap = null;//ImageIO.read(new File("topMap.jpg"));//mapa que define a galaxia (vista de cima)
-	BufferedImage sideMap = null;//ImageIO.read(new File("sideMap.jpg"));//mapa que define a galaxia (perfil)
+	static BufferedImage mainMap;//ImageIO.read(new File("topMap.jpg"));//mapa que define a galaxia (vista de cima)
+	String mainMapName = "topMap";
 
-	public Galaxia(String instancerTopMap,String instancerSideMap){
-		caregaMapas();
+	public Galaxia(){
 
 
 
 	}
 
-	public void caregaMapas() {
+
+
+	public int getNumeroDeEstrelas(int x,int y,int z){
+
 		try {
-			topMap = ImageIO.read(new File("dat\\topMap.jpg"));
-		} catch (IOException e) {
-		}
-		
-		try {
-			sideMap = ImageIO.read(new File("dat\\sideMap.jpg"));
+			mainMap = ImageIO.read(new File(mainMapName+".jpg"));
 		} catch (IOException e) {
 		}
 
-	}
+		double p=0;
+		int estrelas=0;
+		p=(-4*((y-5)*(y-5))+100);
+		estrelas = (int) ((p/100)*((0.004/8947848)*500*500*500*Math.abs(mainMap.getRGB(z,x))));
 
+		return estrelas;
 
-	public static double getDensidadeDeEstrelas(){
-		
 	}
-	//image.getRGB(x,y);
 
 }
