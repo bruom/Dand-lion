@@ -1,19 +1,34 @@
 package entities;
 
+/*
+ * Classe responsavel por gerenciar a galáxia.
+ * 
+ * Fornece os dados sobre o formato da mesma.
+ * 
+ * 
+ */
+
 import java.awt.image.*;
 import java.io.*;
-
 import javax.imageio.*;
 
 public class Galaxia {
-	static BufferedImage mainMap;
-	String mainMapName = "\\dat\\topMap";
 
-	public Galaxia(){
+	//  ATRIBUTOS!
+	static BufferedImage mainMap;//Buffer do mapa geral
+	String mainMapName = "\\dat\\topMap";//Caminho do mapa geral e nome do mesmo
+
+	//-------------------------------------------------
+	//  Métodos!
+	//-------------------------------------------------
+
+	public Galaxia(){//Método construtor
 
 
 
-	}
+	}//Galaxia
+
+	//-------------------------------------------------
 
 
 
@@ -31,6 +46,8 @@ public class Galaxia {
 
 		return estrelas;
 
-	}
+	}//getNumeroDeEstrelas
 
-}
+
+
+}//Galaxia
