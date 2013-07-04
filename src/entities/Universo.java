@@ -16,8 +16,18 @@ public class Universo {
 	//-------------------------------------------------
 
 	public Universo(){//Metodo construtor!
+		int quadr[] = new int[3];
+		quadr[0]=100;
+		quadr[1]=100;
+		quadr[2]=3;
+		
+		double coords[] = new double[3];
+		coords[0] = 225;
+		coords[1] = 225;
+		coords[2] = 225;
+		
 		this.galaxia = new Galaxia("\\dat\\topMap");
-		this.usuario = new User(null);
+		this.usuario = new User(quadr,coords);
 
 		//Iinstancie aqui o resto ^^
 

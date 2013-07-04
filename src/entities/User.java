@@ -22,9 +22,11 @@ public class User {
 	//  Métodos!
 	//-------------------------------------------------
 
-	public User(double iniXYZ[]){//Construtor
+	public User(int quadr[],double iniXYZ[]){//Construtor
 		
+		this.quadrante=quadr;
 		this.xyz=iniXYZ;//Seta a localização do usuário no bloco
+		
 		blockAdm = new BlockADM();
 		blockAdm.geraBlocos();
 

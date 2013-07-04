@@ -14,6 +14,8 @@ import javax.imageio.ImageIO;
  *
  */
 
+import reality.Realidade;
+
 public class MegaBloco {
 
 	//  ATRIBUTOS!
@@ -75,7 +77,7 @@ public class MegaBloco {
 		double p=0;
 
 		try {//le o mapa
-			Galaxia.mainMap = ImageIO.read(new File(Galaxia.mainMapName+".jpg"));
+			Realidade.universo.galaxia.mainMap = ImageIO.read(new File(Realidade.universo.galaxia.mainMapName+".jpg"));
 		} catch (IOException e) {
 		}
 
@@ -101,7 +103,7 @@ public class MegaBloco {
 		break;
 		}
 
-		estrelas = (int) ((p)*((0.004/8947848)*500*500*500*Math.abs(Galaxia.mainMap.getRGB(x,y))));
+		estrelas = (int) ((p)*((0.004/8947848)*500*500*500*Math.abs(Realidade.universo.galaxia.mainMap.getRGB(x,y))));
 
 		return estrelas;
 

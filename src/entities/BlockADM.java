@@ -1,5 +1,7 @@
 package entities;
 
+import reality.Realidade;
+
 /*
  * Classe responsável por gerenciar os MegaBlocos.
  * Inicializada e utilizada pela classe User.
@@ -15,7 +17,7 @@ public class BlockADM {
 	//  ATRIBUTOS!
 	public int blocoSfera = 3;//Define quantos blocos serão carregados ao mesmo tempo (Quantos blocos cada lado da matriz terá)
 	public MegaBloco matrizDeBlocos[][][];//Retem os blocos em memória
-	public int blocoAtual[] = new int[3];//Sendo x, y, z as posições
+	public int blocoAtual[] = new int[3];//Bloco em que o usuário se encontra. Sendo x, y, z as posições
 
 	//-------------------------------------------------
 	//  Métodos!
@@ -25,7 +27,8 @@ public class BlockADM {
 		blocoAtual[0]=(int) ((double)(blocoSfera/2)+0.5);
 		blocoAtual[1]=(int) ((double)(blocoSfera/2)+0.5);
 		blocoAtual[2]=(int) ((double)(blocoSfera/2)+0.5);
-	}
+	}//centralizaMatriz
+	
 
 	public void geraBlocos() {//Percore a matriz gerando e preenchendo cada bloco
 		matrizDeBlocos = new MegaBloco[blocoSfera][blocoSfera][blocoSfera];//Instancia a matriz de blocos
@@ -37,13 +40,10 @@ public class BlockADM {
 					
 					int coordBloco[] = new int[3];
 					
-					calculaCoordBloco(coordBloco);
+					setaCoordsMatriz(coordBloco,identificadorLocal);
 					
 					matrizDeBlocos[x][y][z].setup(coordBloco, identificadorLocal);
 					
-					
-
-
 					identificadorLocal++;
 					z++;
 				}
@@ -54,13 +54,148 @@ public class BlockADM {
 			x++;
 		}
 
-	}//centralizaMatriz
+	}//geraBlocos
+	
+	public void setaCoordsMatriz(int coords[],int identBlockLocal){
+		switch(identBlockLocal){
+		case 1:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 2:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 3:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 4:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 5:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 6:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 7:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 8:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 9:
+			coords[0]=Realidade.universo.usuario.quadrante[0]-1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 10:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 11:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 12:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 13:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 14:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 15:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 16:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 17:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 18:
+			coords[0]=Realidade.universo.usuario.quadrante[0];
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 19:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 20:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 21:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]-1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 22:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 23:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 24:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1];
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		case 25:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]-1;
+			break;
+		case 26:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2];
+			break;
+		case 27:
+			coords[0]=Realidade.universo.usuario.quadrante[0]+1;
+			coords[1]=Realidade.universo.usuario.quadrante[1]+1;
+			coords[2]=Realidade.universo.usuario.quadrante[2]+1;
+			break;
+		}
+	}//setaCoordsMatriz
 
-	private void calculaCoordBloco(int[] coordBloco) {
-		
-		//TODO coordBloco[0] = 
-		
-	}
 
 	public void update(double xyz[]){//Update
 
