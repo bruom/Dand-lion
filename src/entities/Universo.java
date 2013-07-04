@@ -1,4 +1,5 @@
 package entities;
+
 /*
  * Classe responsavel pelo universo.
  * 
@@ -8,8 +9,8 @@ package entities;
 public class Universo {
 
 	//  ATRIBUTOS!
-	public Galaxia galaxia;
-	public User usuario;
+	public static Galaxia galaxia;
+	public static User usuario;
 
 	//-------------------------------------------------
 	//  Métodos!
@@ -26,8 +27,8 @@ public class Universo {
 		coords[1] = 225;
 		coords[2] = 225;
 		
-		this.galaxia = new Galaxia("\\dat\\topMap");
-		this.usuario = new User(quadr,coords);
+		Universo.galaxia = new Galaxia("\\dat\\topMap");
+		Universo.usuario = new User(quadr,coords);
 
 		//Iinstancie aqui o resto ^^
 
@@ -36,7 +37,7 @@ public class Universo {
 	}
 
 	public void update(){//Update universal.
-		this.usuario.update();
+		Universo.usuario.update();
 	}
 
 

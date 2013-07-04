@@ -15,8 +15,8 @@ import java.awt.image.*;
 public class Galaxia {
 
 	//  ATRIBUTOS!
-	public BufferedImage mainMap;//Buffer do mapa geral
-	public String mainMapName;//Caminho do mapa geral e nome do mesmo
+	public static BufferedImage mainMap;//Buffer do mapa geral
+	public static String mainMapName;//Caminho do mapa geral e nome do mesmo
 
 	//-------------------------------------------------
 	//  Métodos!
@@ -24,7 +24,7 @@ public class Galaxia {
 
 	public Galaxia(String map){//Método construtor
 		
-		this.mainMapName=map;
+		Galaxia.mainMapName=map;
 
 
 	}//Galaxia

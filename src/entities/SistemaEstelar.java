@@ -2,8 +2,8 @@ package entities;
 
 public class SistemaEstelar {
 	
-	public int sysCoord[];
-	public int id;
+	public static int sysCoord[] = new int[3];
+	public static int id;
 	
 	
 	
