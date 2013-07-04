@@ -16,7 +16,7 @@ public class Universo {
 	//-------------------------------------------------
 
 	public Universo(){//Metodo construtor!
-		this.galaxia = new Galaxia();
+		this.galaxia = new Galaxia("\\dat\\topMap");
 		this.usuario = new User(null);
 
 		//Iinstancie aqui o resto ^^

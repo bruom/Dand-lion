@@ -9,21 +9,22 @@ package entities;
  */
 
 import java.awt.image.*;
-import java.io.*;
-import javax.imageio.*;
+//import java.io.*;
+//import javax.imageio.*;
 
 public class Galaxia {
 
 	//  ATRIBUTOS!
 	static BufferedImage mainMap;//Buffer do mapa geral
-	String mainMapName = "\\dat\\topMap";//Caminho do mapa geral e nome do mesmo
+	public static String mainMapName;//Caminho do mapa geral e nome do mesmo
 
 	//-------------------------------------------------
 	//  Métodos!
 	//-------------------------------------------------
 
-	public Galaxia(){//Método construtor
-
+	public Galaxia(String map){//Método construtor
+		
+		Galaxia.mainMapName=map;
 
 
 	}//Galaxia
@@ -32,21 +33,6 @@ public class Galaxia {
 
 
 
-	public int getNumeroDeEstrelas(int x,int y,int z){
-
-		try {
-			mainMap = ImageIO.read(new File(mainMapName+".jpg"));
-		} catch (IOException e) {
-		}
-
-		double p=0;
-		int estrelas=0;
-		p=(-4*((y-5)*(y-5))+100);
-		estrelas = (int) ((p/100)*((0.004/8947848)*500*500*500*Math.abs(mainMap.getRGB(z,x))));
-
-		return estrelas;
-
-	}//getNumeroDeEstrelas
 
 
 

@@ -21,7 +21,7 @@ public class BlockADM {
 	//  Métodos!
 	//-------------------------------------------------
 
-	public void centralizaMatriz() {//Centraliza o usuário na matriz, em relação aos blocos
+	public void centralizaMatriz() {//Centraliza o usuário na matriz, em relação aos blocos TODO VER!
 		blocoAtual[0]=(int) ((double)(blocoSfera/2)+0.5);
 		blocoAtual[1]=(int) ((double)(blocoSfera/2)+0.5);
 		blocoAtual[2]=(int) ((double)(blocoSfera/2)+0.5);
@@ -34,7 +34,14 @@ public class BlockADM {
 		for(x=0;x<matrizDeBlocos.length;){
 			for(y=0;y<matrizDeBlocos[0].length;){
 				for(z=0;z<matrizDeBlocos[0][0].length;){
-					matrizDeBlocos[x][y][z].idLocal=identificadorLocal;
+					
+					int coordBloco[] = new int[3];
+					
+					calculaCoordBloco(coordBloco);
+					
+					matrizDeBlocos[x][y][z].setup(coordBloco, identificadorLocal);
+					
+					
 
 
 					identificadorLocal++;
@@ -48,6 +55,12 @@ public class BlockADM {
 		}
 
 	}//centralizaMatriz
+
+	private void calculaCoordBloco(int[] coordBloco) {
+		
+		//TODO coordBloco[0] = 
+		
+	}
 
 	public void update(double xyz[]){//Update
 

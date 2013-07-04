@@ -11,17 +11,20 @@ package entities;
 public class User {
 
 	//  ATRIBUTOS!
-	public double xyz[] = new double[3];//de 0,0,0 a 501,501,501 LOCALIZAÇÃO NO BLOCO!
+	public int quadrante[] = new int[3];//Quadrante atual!
 	public int localBlock[] = new int[3];//Bloco atual!!
+	public double xyz[] = new double[3];//de 1,1,1 a 500,500,500 LOCALIZAÇÃO NO BLOCO!
+	
+	
 	public BlockADM blockAdm;//TODO colocar na inicialização
 
 	//-------------------------------------------------
 	//  Métodos!
 	//-------------------------------------------------
 
-	public User(double[] loc){//Construtor
-		this.xyz=loc;//Seta a localização do usuário
-		//blockAdm.centralizaMatriz();
+	public User(double iniXYZ[]){//Construtor
+		
+		this.xyz=iniXYZ;//Seta a localização do usuário no bloco
 		blockAdm = new BlockADM();
 		blockAdm.geraBlocos();
 
