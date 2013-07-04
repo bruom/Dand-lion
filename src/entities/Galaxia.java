@@ -6,8 +6,8 @@ import java.io.*;
 import javax.imageio.*;
 
 public class Galaxia {
-	static BufferedImage mainMap;//ImageIO.read(new File("topMap.jpg"));//mapa que define a galaxia (vista de cima)
-	String mainMapName = "topMap";
+	static BufferedImage mainMap;
+	String mainMapName = "\\dat\\topMap";
 
 	public Galaxia(){
 
