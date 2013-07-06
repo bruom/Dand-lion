@@ -1,12 +1,19 @@
-### Projeto Lø!
+###Computerphile:
+****
+Project to develop a framework able to generate in a procedural way, all the galaxy, with stars, planets and so on.
+
+It is a study, and dosent actualy work so well Â¬Â¬.
+
+***
+### Projeto Lï¿½!
 ***
 
 ![D](http://www.2dsense.com/images/rolls.aspx?code=2DS.US/892621D.C&size=10)
 
-Projeto de desenvolvimento de uma framework capaz de gerar, de forma procedural, tuda a galáxia, com as estrelas, planetas, lagos, arvores, etc...
+Projeto de desenvolvimento de uma framework capaz de gerar, de forma procedural, tuda a galï¿½xia, com as estrelas, planetas, lagos, arvores, etc...
 
-> Não tenho compromisso em conclui-lo!
+> Nï¿½o tenho compromisso em conclui-lo!
 
 ***
 
-É priobido o uso comercial deste código. Seu uso deve ser para fins acadêmicos.
+ï¿½ priobido o uso comercial deste cï¿½digo. Seu uso deve ser para fins acadï¿½micos.
