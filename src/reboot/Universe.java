@@ -6,16 +6,25 @@ public class Universe {
 	public static User usuario;
 	
 	public static void main(String[] args) {
-		quadrante = new Quadrant(10, 10, 10, 10);
+		
+		quadrante = new Quadrant(94, 101, 6);
+		
+		quadrante.setup();
+		
 		
 		printStars();
+		
+		
+		
+		
 
 	}
 
 	private static void printStars() {
 		
+		
 		for(int i = 0; i< quadrante.starsNumber;i++){
-			System.out.println(i+"ª Estrela:");
+			System.out.println((i+1)+"ª Estrela:");
 			System.out.println("Nome: "+quadrante.starsArray[i].systemName);
 			System.out.println("X: "+quadrante.starsArray[i].xCoord);
 			System.out.println("Y: "+quadrante.starsArray[i].yCoord);

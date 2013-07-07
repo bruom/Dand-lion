@@ -8,7 +8,6 @@ public class StarSystems {
 	public SystemsObjects[] objectsArray;
 	
 	public StarSystems(){
-		System.out.println("Estrela Criada!");
 	}
 
 }
