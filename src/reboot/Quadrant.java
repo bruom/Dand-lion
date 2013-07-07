@@ -10,7 +10,6 @@ public class Quadrant {
 
 	public Quadrant(int starsnumber,int xcoord,int ycoord,int zcoord){
 		this.starsNumber = starsnumber;
-		this.starsArray = new StarSystems[this.starsNumber];
 		this.xCoord = xcoord;
 		this.yCoord = ycoord;
 		this.zCoord = zcoord;
@@ -21,15 +20,15 @@ public class Quadrant {
 	
 	
 	public void igniteStars(){
-		
+		this.starsArray = new StarSystems[this.starsNumber];
 		double X=generateCoord(this.localSeed);
-		for(int i=0;i<starsArray.length;i++){
+		for(int i=0;i<this.starsArray.length;i++){
 			//Atribui cada coordenada
-			this.starsArray[i].setCoordX(generateCoord(X));
+			this.starsArray[i].xCoord=generateCoord(X);
 			X=this.starsArray[i].xCoord;
-			this.starsArray[i].setCoordY(generateCoord(X));
+			this.starsArray[i].yCoord=generateCoord(X);
 			X=this.starsArray[i].yCoord;
-			this.starsArray[i].setCoordZ(generateCoord(X));
+			this.starsArray[i].zCoord=generateCoord(X);
 			X=this.starsArray[i].zCoord;
 			//Atribui a Seed
 			this.starsArray[i].localSeed=(this.starsArray[i].xCoord+2*this.starsArray[i].yCoord+3*this.starsArray[i].zCoord);
@@ -38,7 +37,7 @@ public class Quadrant {
 		}
 	}
 	
-	public static double generateCoord(double Xi){
+	public double generateCoord(double Xi){
 		int a = 25136;
 		int b = 25256;
 		int m = 500000;
