@@ -8,6 +8,8 @@ import javax.imageio.*;
 public class GalaxyMapper {
 
 	BufferedImage topMap = null;
+	private  static final String mainMapName = "MainMap.jpg";
+	private  static final String datDir = ".\\dat\\";
 
 	GalaxyMapper(){}
 
@@ -16,9 +18,15 @@ public class GalaxyMapper {
 		double p=0;
 		
 		try {
-			this.topMap = ImageIO.read(new File(".\\dat\\MainMap.jpg"));
+			this.topMap = ImageIO.read(new File(datDir+mainMapName));
 		} catch (IOException e) {
+			System.out.println("============ ERRO!!! ===============");
+			System.out.println(">>> Mapa Principal ("+mainMapName+") Não encontrado!");
+			System.out.println(">>> Dir: (\""+datDir+mainMapName+"\")");
 			System.err.println(e);
+			System.out.println("====================================");
+			e.printStackTrace();
+			System.out.println("====================================");
 		}
 		
 		//p=(-4*((zcoord-5)*(zcoord-5))+100);
