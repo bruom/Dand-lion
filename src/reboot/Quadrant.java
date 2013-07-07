@@ -20,22 +20,24 @@ public class Quadrant {
 	
 	
 	public void igniteStars(){
-		this.starsArray = new StarSystems[this.starsNumber];
-		double X=generateCoord(this.localSeed);
-		for(int i=0;i<this.starsArray.length;i++){
-			//Atribui cada coordenada
-			this.starsArray[i].xCoord=generateCoord(X);
-			X=this.starsArray[i].xCoord;
-			this.starsArray[i].yCoord=generateCoord(X);
-			X=this.starsArray[i].yCoord;
-			this.starsArray[i].zCoord=generateCoord(X);
-			X=this.starsArray[i].zCoord;
-			//Atribui a Seed
-			this.starsArray[i].localSeed=(this.starsArray[i].xCoord+2*this.starsArray[i].yCoord+3*this.starsArray[i].zCoord);
-			//Atribui nome
-			this.starsArray[i].systemName=(this.quadrantName+"-"+this.starsArray[i].localSeed);
-		}
-	}
+        this.starsArray = new StarSystems[this.starsNumber];
+        double X=generateCoord(this.localSeed);
+        for(int i=0;i<this.starsArray.length;i++){
+            //instanciando novo StarSystems e adicionando na posição i
+            this.starsArray[i] = new StarSystems();
+            //Atribui cada coordenada
+            this.starsArray[i].xCoord=generateCoord(X);
+            X=this.starsArray[i].xCoord;
+            this.starsArray[i].yCoord=generateCoord(X);
+            X=this.starsArray[i].yCoord;
+            this.starsArray[i].zCoord=generateCoord(X);
+            X=this.starsArray[i].zCoord;
+            //Atribui a Seed
+            this.starsArray[i].localSeed=(this.starsArray[i].xCoord+2*this.starsArray[i].yCoord+3*this.starsArray[i].zCoord);
+            //Atribui nome
+            this.starsArray[i].systemName=(this.quadrantName+"-"+this.starsArray[i].localSeed);
+        }
+    }
 	
 	public double generateCoord(double Xi){
 		int a = 25136;
