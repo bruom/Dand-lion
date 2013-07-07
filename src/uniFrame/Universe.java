@@ -1,5 +1,7 @@
 package uniFrame;
 
+import debug.DebugPrinter;
+
 public class Universe {
 	
 	public static Quadrant quadrante;
@@ -12,7 +14,10 @@ public class Universe {
 		quadrante.setup();
 		
 		
-		printStars();
+		DebugPrinter debugprinter = new DebugPrinter();
+		
+		debugprinter.printBar();
+		debugprinter.printStars(quadrante);
 		
 		
 		
@@ -20,19 +25,5 @@ public class Universe {
 
 	}
 
-	private static void printStars() {
-		
-		
-		for(int i = 0; i< quadrante.starsNumber;i++){
-			System.out.println((i+1)+"ª Estrela:");
-			System.out.println("Nome: "+quadrante.starsArray[i].systemName);
-			System.out.println("X: "+quadrante.starsArray[i].xCoord);
-			System.out.println("Y: "+quadrante.starsArray[i].yCoord);
-			System.out.println("Z: "+quadrante.starsArray[i].zCoord);
-			System.out.println("SeedLocal: "+quadrante.starsArray[i].localSeed);
-			System.out.println("====================================================");
-		}
-		
-	}
 
 }
