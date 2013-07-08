@@ -27,5 +27,9 @@ public class DebugPrinter {
 	public void printBar(){
 		System.out.println("======================================================");
 	}
+	
+	public void printMsg(String msg){
+		System.out.println(msg);
+	}
 
 }
